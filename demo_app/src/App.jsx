@@ -22,12 +22,14 @@ function App() {
           + 
         </button>
         {count}
-        <button onClick={() => setCount((count) => count - 1)}>
+        <button onClick={() => setCount((count) => {
+          if (count>0){
+            return count - 1
+          }
+          return 0
+        })}>
           - 
         </button>
-        if (count=0){
-        clearInterval(count)
-        }
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
